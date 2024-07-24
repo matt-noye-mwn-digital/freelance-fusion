@@ -1,0 +1,52 @@
+main.loginMainWrap {
+    height: 100svh;
+
+    .loginPage {
+        align-items: center;
+        display: flex;
+        flex-direction: column;;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+
+        .card.loginCard {
+            .card-header {
+                h1 {
+                    font-size: 2rem;
+                    font-weight: 800;
+                    text-align: center;
+                }
+            }
+            .card-body {
+                .loginLinkBtnGroup {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
+                    justify-content: center;
+                    margin-bottom: 30px;
+                }
+                form {
+                    label {
+                        font-size: 1.1rem;
+                        font-weight: 500;
+                        margin-bottom: 5px;
+                    }
+                    input[type='text'],
+                    input[type='email'],
+                    input[type='password'] {
+                        margin-bottom: 30px;
+                    }
+                    button.loginBtn {
+
+                        display: block;
+                        font-size: 1.1rem;
+                        margin: 30px auto 0 auto;
+                        padding: .5rem 1rem;
+                        text-align :center;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+a.primaryOutlineBtn,
+button.primaryOutlineBtn,
+input.primaryOutlineBtn {
+    background-color: transparent;
+    border: 1px solid $primary;
+    border-radius: 5px;
+    box-shadow: none;
+    color: $primary;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    @include transition(all .4s ease-in-out);
+
+    &:hover {
+        background-color: $primary;
+        border: 1px solid $primary;
+        border-radius :5px;
+        box-shadow: none;
+        color: $white;
+        outline: none;
+        text-decoration: none;
+    }
+}
+a.secondryOutlineBtn,
+button.secondryOutlineBtn,
+input.secondryOutlineBtn {
+
+}
+a.whiteOutlineBtn,
+button.whiteOutlineBtn,
+input.whiteOutlineBtn {
+
+}
+a.blackOutlineBtn,
+button.blackOutlineBtn,
+input.blackOutlineBtn {
+
+}

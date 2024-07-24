@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'roboBlack';
+    src: url("../fonts/Roboto-Black.ttf");
+}
+@font-face {
+    font-family: 'roboBold';
+    src: url("../fonts/Roboto-Bold.ttf");
+}
+@font-face {
+    font-family: 'roboMedium';
+    src: url("../fonts/Roboto-Medium.ttf");
+}
+@font-face {
+    font-family: 'roboReg';
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: 'roboLight';
+    src: url("../fonts/Roboto-Light.ttf");
+}
+
+$roboBold: 'roboBold', sans-serif;
+$roboMedium: 'roboMedium', sans-serif;
+$roboReg: 'roboReg', sans-serif;
+$roboLight: 'roboLight', sans-serif;
