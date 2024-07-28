@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminActivityLogController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\Clients\AdminClientsMainController;
+use App\Http\Controllers\Admin\Settings\AdminPaymentMethodController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Client\ClientDashboardController;
 use App\Http\Controllers\Staff\StaffDashboardController;
@@ -31,6 +33,23 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
         Route::get('/', [AdminActivityLogController::class, 'index'])->name('index');
         Route::post('clear', [AdminActivityLogController::class, 'clearActivityLog'])->name('clear');
 
+    });
+
+    //Clients
+    Route::name('clients.')->prefix('clients')->group(function () {
+        Route::get('/', [AdminClientsMainController::class, 'index'])->name('index');
+        Route::get('create', [AdminClientsMainController::class,'create'])->name('create');
+        Route::post('store', [AdminClientsMainController::class,'store'])->name('store');
+        Route::get('show/{id}', [AdminClientsMainController::class,'show'])->name('show');
+        Route::get('edit/{id}', [AdminClientsMainController::class,'edit'])->name('edit');
+        Route::put('update/{id}', [AdminClientsMainController::class,'update'])->name('update');
+    });
+
+    //Settings
+    Route::name('settings.')->prefix('settings')->group(function () {
+
+        //Payment Methods
+        Route::resource('payment-methods', AdminPaymentMethodController::class);
     });
 });
 

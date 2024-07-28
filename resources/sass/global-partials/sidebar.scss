@@ -33,7 +33,7 @@ aside.sidebar {
                 background-color: transparent;
                 color: $offBlack;
                 display: block;
-                font-family: $roboReg;
+                font-family: $reg;
                 font-size: 1.2rem;
                 padding: .5rem 1rem;
                 text-decoration: none;
@@ -59,13 +59,24 @@ aside.sidebar {
 
                 a.dropdown-toggle {
                     cursor: pointer;
+
+                    &:after {
+                        @include transition(all .4s ease-in-out);
+                    }
+
+                    &.show {
+
+                        &::after {
+
+                        }
+                    }
                 }
 
                 ul.dropdown-menu {
                     background-color: $white;
                     border: 0;
                     padding: .5rem 1.5rem;
-                    position: relative;
+                    position: relative !important;
                     width: 100%;
 
                     li {
@@ -73,6 +84,11 @@ aside.sidebar {
                         a {
                             font-size: 1rem;
                         }
+                    }
+
+                    &.show {
+                        position: relative !important;
+                        transform: translate(0px, 0px) !important;
                     }
                 }
             }

@@ -1,0 +1,81 @@
+table.table {
+
+    thead {
+        tr {
+            th {
+                color: $black;
+                font-family: $medium;
+                font-size: 1.15rem;
+                line-height: 1.75rem;
+                &.actions {
+                    text-align: right;
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+
+                &.actions {
+                    text-align: right;
+
+                    a.dropdown-toggle {
+                        border: 0;
+                        box-shadow: none;
+                        color: $black;
+                        display: block;
+                        font-size: 1.1rem;
+                        outline: none;
+                        text-decoration: none;
+                        @include transition(all .4s ease-in-out);
+                        width: 100%;
+
+                        &:hover {
+                            box-shadow: none;
+                            color: $primary;
+                            cursor: pointer;
+                            outline: none;
+                            text-decoration: none;
+                        }
+                    }
+                    .dropdown-menu {
+                        background-color: $white;
+                        border: 1px solid $lightGrey2;
+                        border-radius: 5px;
+
+                        li {
+                            display: block;
+                            margin-bottom: 5px;
+                            width: 100%;
+                            a, button {
+                                background-color: transparent;
+                                border: 0;
+                                box-shadow: none;
+                                color: $black;
+                                display: block;
+                                font-family: $reg;
+                                font-size: 1rem;
+                                margin: 0;
+                                padding: .5rem 1rem;
+                                text-align: left;
+                                text-decoration: none;
+                                @include transition(all .4s ease-in-out);
+                                width: 100%;
+
+                                &:hover {
+                                    background-color: $lightGrey2;
+                                    border: 0;
+                                    box-shadow: none;
+                                    color: $primary;
+                                    outline: none;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

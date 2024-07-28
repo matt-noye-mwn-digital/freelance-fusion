@@ -24,6 +24,7 @@ class User extends Authenticatable
         'email',
         'password',
         'avatar',
+        'status',
     ];
 
     /**
@@ -45,4 +46,25 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected function userDetails(){
+        return $this->hasOne(UserDetail::class);
+    }
+
+    protected function clientDetails(){
+        return $this->hasOne(ClientDetail::class, 'client_id');
+    }
+
+    protected function currency(){
+        return $this->hasOne(Currency::class);
+    }
+
+    //Status, Active, inactive, closed
+    public function getStatus(){
+        return match($this->status) {
+            'active' => '<span class="badge text-bg-success">Active</span>',
+            'inactive' => '<span class="badge text-bg-warning">Inactive</span>',
+            'closed' => '<span class="badge text-bg-danger">Closed</span>',
+        };
+    }
 }

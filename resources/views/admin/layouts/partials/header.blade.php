@@ -23,6 +23,8 @@
         @vite(['resources/sass/app.scss', 'resources/sass/admin.scss', 'resources/js/app.js', 'resources/js/admin.js'])
     </head>
     <body>
+        @include('sweetalert::alert')
+
         @include('admin.layouts.partials.topBar')
         @include('admin.layouts.partials.sidebar')
         <main class="dashboardMain">

@@ -85,7 +85,7 @@ header {
                 &.userDropdown {
                     .dropdown-toggle {
                         color: $black;
-                        font-family: $roboMedium;
+                        font-family: $medium;
                         font-size: 1rem;
                         text-decoration: none;
                         @include transition(all .4s ease-in-out);
