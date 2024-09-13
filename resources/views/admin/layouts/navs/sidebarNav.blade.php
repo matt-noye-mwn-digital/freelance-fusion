@@ -13,10 +13,10 @@
         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Staff</a>
         <ul class="dropdown-menu">
             <li>
-                <a href="">All Staff</a>
+                <a href="{{ route('admin.staff.index') }}">All Staff</a>
             </li>
             <li>
-                <a href="">Add Staff Member</a>
+                <a href="{{ route('admin.staff.create') }}">Add Staff Member</a>
             </li>
         </ul>
     </li>

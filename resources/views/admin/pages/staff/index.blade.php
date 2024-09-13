@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('content')
     <x-admin.page-hero
-        title="Clients"
+        title="Staff"
         displayButton="yes"
-        buttonContent="Create Client"
-        buttonLink="{{ route('admin.clients.create') }}"
+        buttonContent="Create Staff Member"
+        buttonLink="{{ route('admin.staff.create') }}"
     />
 
     <section class="pageMain">
@@ -13,39 +13,31 @@
                 <div class="col-12">
                     <table class="table table-hover w-100">
                         <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Customer Name</th>
-                                <th>Company Name</th>
-                                <th>Email</th>
-                                <th>Status</th>
-                                <th>Created</th>
-                                <th class="actions">Actions</th>
-                            </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Created</th>
+                            <th class="actions">Actions</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            @foreach($clients as $client)
+                            @foreach($staff as $staff)
                                 <tr>
-                                    <td>{{ $client->id }}</td>
-                                    <td>{{ $client->first_name }} {{ $client->last_name }}</td>
-                                    <td>
-                                        @if($client->clientDetails->company_name)
-                                            {{ $client->clientDetails->company_name }}
-                                        @else
-                                            --
-                                        @endif
-                                    </td>
-                                    <td>{{ $client->email }}</td>
-                                    <td>{!! $client->getStatus() !!}</td>
-                                    <td>{{ date('d/m/Y', strtotime($client->created_at)) }}</td>
+                                    <td>{{ $staff->id }}</td>
+                                    <td>{{ $staff->first_name }} {{ $staff->last_name }}</td>
+                                    <td>{{ $staff->email }}</td>
+                                    <td>{!! $staff->getStatus() !!}</td>
+                                    <td>{{ date('d/m/Y', strtotime($staff->created_at)) }}</td>
                                     <td class="actions">
                                         <div class="dropdown">
                                             <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-vertical"></i>
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-end">
-                                                <li><a href="{{ route('admin.clients.show', $client->id) }}">View</a></li>
-                                                <li><a href="{{ route('admin.clients.edit', $client->id) }}">Edit</a></li>
+                                                <li><a href="{{ route('admin.staff.show', $staff->id) }}">View</a></li>
+                                                <li><a href="">Edit</a></li>
                                                 <li>
                                                     <form action="" method="post">
                                                         @csrf

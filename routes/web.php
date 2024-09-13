@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminActivityLogController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\Clients\AdminClientsMainController;
 use App\Http\Controllers\Admin\Settings\AdminPaymentMethodController;
+use App\Http\Controllers\Admin\Staff\AdminStaffMainController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Client\ClientDashboardController;
 use App\Http\Controllers\Staff\StaffDashboardController;
@@ -50,6 +51,17 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
 
         //Payment Methods
         Route::resource('payment-methods', AdminPaymentMethodController::class);
+    });
+
+    //Staff
+    Route::name('staff.')->prefix('staff')->group(function () {
+        Route::get('/', [AdminStaffMainController::class, 'index'])->name('index');
+        Route::get('create', [AdminStaffMainController::class,'create'])->name('create');
+        Route::post('store', [AdminStaffMainController::class,'store'])->name('store');
+        Route::get('show/{id}', [AdminStaffMainController::class,'show'])->name('show');
+        Route::get('edit/{id}', [AdminStaffMainController::class,'edit'])->name('edit');
+        Route::put('update/{id}', [AdminStaffMainController::class,'update'])->name('update');
+        Route::delete('destroy/{id}', [AdminStaffMainController::class,'destroy'])->name('destroy');
     });
 });
 
