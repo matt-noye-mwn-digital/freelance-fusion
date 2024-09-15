@@ -12,17 +12,14 @@
         <meta name="robots" content="noindex, nofollow">
 
         <title>@stack('page-title') - {{ config('app.name') }}</title>
-
-        <!-- Stylesheets -->
-
-        @stack('page-styles')
-
-        <!-- Scripts -->
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-        @stack('page-scripts')
-
         @vite(['resources/sass/app.scss', 'resources/sass/admin.scss', 'resources/js/app.js', 'resources/js/admin.js'])
+        @livewireStyles
+        @livewireScripts
+        @stack('page-styles')
+        @stack('page-scripts')
     </head>
     <body>
         @include('sweetalert::alert')
