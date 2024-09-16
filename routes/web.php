@@ -36,15 +36,7 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
 
     });
 
-    //Clients
-    Route::name('clients.')->prefix('clients')->group(function () {
-        Route::get('/', [AdminClientsMainController::class, 'index'])->name('index');
-        Route::get('create', [AdminClientsMainController::class,'create'])->name('create');
-        Route::post('store', [AdminClientsMainController::class,'store'])->name('store');
-        Route::get('show/{id}', [AdminClientsMainController::class,'show'])->name('show');
-        Route::get('edit/{id}', [AdminClientsMainController::class,'edit'])->name('edit');
-        Route::put('update/{id}', [AdminClientsMainController::class,'update'])->name('update');
-    });
+
 
     //Settings
     Route::name('settings.')->prefix('settings')->group(function () {
@@ -54,15 +46,7 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
     });
 
     //Staff
-    Route::name('staff.')->prefix('staff')->group(function () {
-        Route::get('/', [AdminStaffMainController::class, 'index'])->name('index');
-        Route::get('create', [AdminStaffMainController::class,'create'])->name('create');
-        Route::post('store', [AdminStaffMainController::class,'store'])->name('store');
-        Route::get('show/{id}', [AdminStaffMainController::class,'show'])->name('show');
-        Route::get('edit/{id}', [AdminStaffMainController::class,'edit'])->name('edit');
-        Route::put('update/{id}', [AdminStaffMainController::class,'update'])->name('update');
-        Route::delete('destroy/{id}', [AdminStaffMainController::class,'destroy'])->name('destroy');
-    });
+
 });
 
 //Client / Customer Routes

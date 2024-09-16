@@ -5,18 +5,18 @@
     <li class="dropdown">
         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Clients</a>
         <ul class="dropdown-menu">
-            <li><a href="{{ route('admin.clients.index') }}">All Clients</a></li>
-            <li><a href="{{ route('admin.clients.create') }}">Create Client</a></li>
+            <li><a href="{{--{{ route('admin.clients.index') }}--}}">All Clients</a></li>
+            <li><a href="{{--{{ route('admin.clients.create') }}--}}">Create Client</a></li>
         </ul>
     </li>
     <li class="dropdown">
         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Staff</a>
         <ul class="dropdown-menu">
             <li>
-                <a href="{{ route('admin.staff.index') }}">All Staff</a>
+                <a href="{{--{{ route('admin.staff.index') }}--}}">All Staff</a>
             </li>
             <li>
-                <a href="{{ route('admin.staff.create') }}">Add Staff Member</a>
+                <a href="{{--{{ route('admin.staff.create') }}--}}">Add Staff Member</a>
             </li>
         </ul>
     </li>
@@ -33,7 +33,7 @@
                 <a href="">General Settings</a>
             </li>
             <li>
-                <a href="{{ route('admin.settings.payment-methods.index') }}">
+                <a href="{{--{{ route('admin.settings.payment-methods.index') }}--}}">
                     Payment Methods
                 </a>
             </li>

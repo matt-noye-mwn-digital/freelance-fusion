@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             PaymentMethodSeeder::class,
             SuperAdminSeeder::class,
             AdminSeeder::class,
-            TestingUserSeeder::class,
+            //TestingUserSeeder::class,
 
         ]);
     }
