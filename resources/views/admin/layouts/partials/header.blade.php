@@ -22,11 +22,16 @@
         @stack('page-scripts')
     </head>
     <body>
-        @include('sweetalert::alert')
+        {{--@include('sweetalert::alert')
 
         @include('admin.layouts.partials.topBar')
-        @include('admin.layouts.partials.sidebar')
-        <main class="dashboardMain">
 
+        <div class="app-main-container">
+            @include('admin.layouts.partials.sidebar')
+            <main class="dashboardMain">--}}
 
-
+        @include('sweetalert::alert')
+        @include('admin.layouts.partials.topbar')
+        <div class="app-main-container">
+            @include('admin.layouts.partials.sidebar')
+            <main class="dashboardMain">

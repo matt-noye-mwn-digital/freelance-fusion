@@ -5,6 +5,7 @@
     <li class="dropdown">
         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Billing</a>
         <ul class="dropdown-menu">
+            <li><a href="">Expenses</a></li>
             <li><a href="">Transactions</a></li>
             <li class="dropdown dropdown-submenu">
                 <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Invoices</a>
@@ -26,6 +27,7 @@
                 <ul class="dropdown-menu"></ul>
             </li>
             <li><a href="">Quotes</a></li>
+            <li><a href="">Estimates</a></li>
         </ul>
     </li>
     <li class="dropdown">
@@ -33,6 +35,18 @@
         <ul class="dropdown-menu">
             <li><a href="{{ route('admin.clients.index') }}">All Clients</a></li>
             <li><a href="{{ route('admin.clients.create') }}">Create Client</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Contracts</a>
+        <ul class="dropdown-menu">
+            <li><a href="">All Contracts</a></li>
+            <li><a href="">Create Contract</a></li>
+            <hr>
+            <li><a href="">All Contract Types</a></li>
+            <li><a href="">Create Contract Type</a></li>
+            <hr>
+            <li><a href="">Contract Styles</a></li>
         </ul>
     </li>
     <li class="dropdown">
@@ -49,6 +63,34 @@
         </ul>
     </li>
     <li class="dropdown">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Marketing</a>
+        <ul class="dropdown-menu">
+
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Orders</a>
+        <ul class="dropdown-menu">
+
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Project Management</a>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Proposals</a>
+        <ul class="dropdown-menu">
+            <li><a href="">All Proposals</a></li>
+            <li><a href="">Create Proposal</a></li>
+        </ul>
+    </li>
+
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+        <ul class="dropdown-menu"></ul>
+    </li>
+
+    <li class="dropdown">
         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Staff</a>
         <ul class="dropdown-menu">
             <li>
@@ -57,6 +99,12 @@
             <li>
                 <a href="{{ route('admin.staff.create') }}">Add Staff Member</a>
             </li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Support</a>
+        <ul class="dropdown-menu">
+
         </ul>
     </li>
     <hr>
@@ -88,6 +136,12 @@
             <li>
                 <a href="">Permissions</a>
             </li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Tools</a>
+        <ul class="dropdown-menu">
+
         </ul>
     </li>
 </ul>

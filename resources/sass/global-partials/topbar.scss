@@ -1,8 +1,72 @@
 header {
     .topbar {
+        align-items: center;
         background-color: $white;
         border-bottom: 1px solid $lightGrey2;
-        padding: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        height:80px;
+        justify-content: center;
+        //padding: 1rem 0;
+        position: relative;
+
+        button.sidebarMenuToggler {
+            background-color: transparent;
+            border: 0;
+            border-right: 1px solid $lightGrey2;
+            border-radius: 0;
+            box-shadow: none;
+            color: $black;
+            font-size: 1.25rem;
+            height: 80px;
+            left: -1.5rem;
+            line-height: 0;
+            margin: 0;
+            padding: 1rem;
+            position: relative;
+            top: 0;
+            @include transition(all .4s ease-in-out);
+            width: 75px;
+
+        }
+
+        .topbar-brand {
+            color: $primary;
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            //margin-left: 2rem;
+            padding: 0 .5rem;
+            text-decoration: none;
+        }
+
+
+
+        .quickCreateDropdown {
+            a.dropdown-toggle {
+                color: $black;
+                font-size: 1rem;
+                text-decoration: none;
+                @include transition(all .4s ease-in-out);
+
+                &:hover,
+                &.show {
+                    background-color: transparent;
+                    border: 0;
+                    border-radius: 0;
+                    color: $secondry;
+                    outline: none;
+                    text-decoration: none;
+                }
+            }
+            ul.dropdown-menu {
+                li {
+                    a {
+
+                    }
+                }
+            }
+        }
 
         form.searchFormMain {
             .input-group {
