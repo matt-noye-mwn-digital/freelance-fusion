@@ -1,0 +1,29 @@
+@media only screen and (max-width: 767px) {
+
+    header {
+        .topbar {
+            button.sidebarMenuToggler {
+                border: 1px solid $lightGrey2;
+                left: 0;
+                width: 50px
+            }
+            .topbar-brand {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    aside.sidebar {
+        z-index: 1080;
+        &.open {
+            width: 100%;
+        }
+    }
+
+    .adminPageHero {
+        h1 {
+            margin-bottom: 30px;
+        }
+    }
+
+}

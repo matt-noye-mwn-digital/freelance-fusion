@@ -4,9 +4,9 @@ $(document).ready(function() {
     // Handle the sidebar menu on large screens
     if ($(window).width() >= 1081) {
         $('.sidebar').addClass('open');
-        $('header .topbar button.sidebarMenuToggler').click(function() {
+        $('button.sidebarMenuToggler').click(function() {
             $('.sidebar').toggleClass('open', 1000);
-            $('main.dashboardMain').toggleClass('full', 1100);
+            $('.dashboardMain').toggleClass('full', 1100);
         });
         $('button.sidebarMenuToggler').click(function() {
             $(this).find('i').toggleClass('fa-times fa-bars');
@@ -16,8 +16,13 @@ $(document).ready(function() {
     // Handle the sidebar menu on small screens
     if ($(window).width() <= 1080) {
         $('.sidebar').removeClass('open');
-        $('header .topbar button.sidebarMenuToggler').click(function() {
+        $('.dashboardMain').addClass('full');
+        $('button.sidebarMenuToggler').find('i').removeClass('fa-times');
+        $('button.sidebarMenuToggler').find('i').addClass('fa-bars');
+        $('button.sidebarMenuToggler').click(function() {
+            $(this).find('i').toggleClass('fa-bars fa-times')
             $('.sidebar').toggleClass('open', 1000);
+            $('.dashboardMain').toggleClass('full', 1100);
         });
     }
 
