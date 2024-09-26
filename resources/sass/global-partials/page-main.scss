@@ -1,7 +1,12 @@
 .pageMain {
     background-color: $white;
     border-radius: 10px;
+    min-height: 100svh;
     margin-bottom: 2rem;
 
     padding: 2rem 1rem;
+
+    .table-responsive {
+        overflow-y: visible;
+    }
 }

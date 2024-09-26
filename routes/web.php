@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminActivityLogController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\Clients\AdminClientsMainController;
+use App\Http\Controllers\Admin\Leads\AdminLeadMainController;
 use App\Http\Controllers\Admin\Settings\AdminPaymentMethodController;
 use App\Http\Controllers\Admin\Staff\AdminStaffMainController;
 use App\Http\Controllers\Auth\LoginController;
@@ -36,7 +37,18 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
 
     });
 
+    //Clients
+    Route::resource('clients', AdminClientsMainController::class);
 
+    //Leads
+    Route::name('leads.')->prefix('leads')->group(function(){
+        Route::get('/', [AdminLeadMainController::class, 'index'])->name('index');
+        Route::get('create', [AdminLeadMainController::class, 'create'])->name('create');
+        Route::post('store', [AdminLeadMainController::class, 'store'])->name('store');
+        Route::get('edit/{id}', [AdminLeadMainController::class, 'edit'])->name('edit');
+        Route::put('update/{id}', [AdminLeadMainController::class, 'update'])->name('update');
+        Route::delete('destroy/{id}', [AdminLeadMainController::class, 'destroy'])->name('destroy');
+    });
 
     //Settings
     Route::name('settings.')->prefix('settings')->group(function () {
@@ -46,7 +58,7 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
     });
 
     //Staff
-
+    Route::resource('staff', AdminStaffMainController::class);
 });
 
 //Client / Customer Routes

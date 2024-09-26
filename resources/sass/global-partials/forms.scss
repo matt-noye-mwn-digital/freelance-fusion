@@ -22,6 +22,7 @@ form.createEditForm {
     input[type='email'],
     input[type='tel'],
     input[type='password'],
+    input[type='number'],
     select{
         background-color: $lightGrey;
         border: 1px solid $lightGrey2;
