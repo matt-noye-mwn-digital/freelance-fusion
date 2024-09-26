@@ -91,6 +91,25 @@ aside.sidebar {
                         transform: translate(0px, 0px) !important;
                     }
                 }
+                &.dropdown {
+                    a.dropdown-toggle {
+
+                        &.show {
+                            color: $secondry;
+                        }
+                    }
+                    ul.submenu-dropdown-menu {
+                        padding: .5rem;
+                        li {
+                            margin-bottom: 0;
+                            a {
+                                font-size: 1rem;
+                                padding-bottom: .25rem;
+                                padding-top: .25rem;
+                            }
+                        }
+                    }
+                }
             }
         }
         hr {
