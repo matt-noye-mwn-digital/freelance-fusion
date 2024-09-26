@@ -38,7 +38,14 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
     });
 
     //Clients
-    Route::resource('clients', AdminClientsMainController::class);
+    Route::name('clients.')->prefix('clients')->group(function(){
+        Route::get('/', [AdminClientsMainController::class, 'index'])->name('index');
+        Route::get('create', [AdminClientsMainController::class, 'create'])->name('create');
+        Route::post('store', [AdminClientsMainController::class, 'store'])->name('store');
+        Route::get('edit/{id}', [AdminClientsMainController::class, 'edit'])->name('edit');
+        Route::put('update/{id}', [AdminClientsMainController::class, 'update'])->name('update');
+        Route::delete('destroy/{id}', [AdminClientsMainController::class, 'destroy'])->name('destroy');
+    });
 
     //Leads
     Route::name('leads.')->prefix('leads')->group(function(){
