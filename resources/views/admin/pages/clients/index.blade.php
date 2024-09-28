@@ -14,7 +14,6 @@
                     <table class="table table-hover w-100">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Customer Name</th>
                                 <th>Company Name</th>
                                 <th>Email</th>
@@ -26,7 +25,6 @@
                         <tbody>
                             @foreach($clients as $client)
                                 <tr>
-                                    <td>{{ $client->id }}</td>
                                     <td>{{ $client->first_name }} {{ $client->last_name }}</td>
                                     <td>
                                         @if($client->clientDetails->company_name)

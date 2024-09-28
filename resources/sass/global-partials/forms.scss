@@ -23,6 +23,9 @@ form.createEditForm {
     input[type='tel'],
     input[type='password'],
     input[type='number'],
+    input[type='date'],
+    input[type='datetime-local'],
+    input[type='time'],
     select{
         background-color: $lightGrey;
         border: 1px solid $lightGrey2;

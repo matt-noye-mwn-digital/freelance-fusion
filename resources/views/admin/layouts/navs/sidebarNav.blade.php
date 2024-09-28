@@ -5,7 +5,7 @@
     <li class="dropdown">
         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Billing</a>
         <ul class="dropdown-menu">
-            <li><a href="">Expenses</a></li>
+            <li><a href="{{ route('admin.billing.expenses.index') }}">Expenses</a></li>
             <li><a href="">Transactions</a></li>
             <li class="dropdown dropdown-submenu">
                 <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Invoices</a>
@@ -123,6 +123,9 @@
                 <a href="{{--{{ route('admin.settings.payment-methods.index') }}--}}">
                     Payment Methods
                 </a>
+            </li>
+            <li>
+                <a href="{{ route('admin.billing.expenses.categories.index') }}">Expense Categories</a>
             </li>
             <li>
                 <a href="">Branding</a>

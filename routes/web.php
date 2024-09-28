@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\Admin\AdminActivityLogController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminTinyFileUploadController;
 use App\Http\Controllers\Admin\Clients\AdminClientsMainController;
+use App\Http\Controllers\Admin\Expenses\AdminExpenseCategoryController;
+use App\Http\Controllers\Admin\Expenses\AdminExpenseController;
 use App\Http\Controllers\Admin\Leads\AdminLeadMainController;
 use App\Http\Controllers\Admin\Settings\AdminPaymentMethodController;
 use App\Http\Controllers\Admin\Staff\AdminStaffMainController;
@@ -37,6 +40,22 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
 
     });
 
+    //Billing
+    Route::name('billing.')->prefix('billing')->group(function(){
+
+
+        Route::name('expenses.')->prefix('expenses')->group(function(){
+            Route::get('/', [AdminExpenseController::class, 'index'])->name('index');
+            Route::get('create', [AdminExpenseController::class, 'create'])->name('create');
+            Route::post('store', [AdminExpenseController::class, 'store'])->name('store');
+            Route::get('edit/{id}', [AdminExpenseController::class, 'edit'])->name('edit');
+            Route::put('update/{id}', [AdminExpenseController::class, 'update'])->name('update');
+            Route::delete('destroy/{id}', [AdminExpenseController::class, 'destroy'])->name('destroy');
+
+            Route::resource('categories', AdminExpenseCategoryController::class);
+        });
+    });
+
     //Clients
     Route::name('clients.')->prefix('clients')->group(function(){
         Route::get('/', [AdminClientsMainController::class, 'index'])->name('index');
@@ -46,6 +65,8 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
         Route::put('update/{id}', [AdminClientsMainController::class, 'update'])->name('update');
         Route::delete('destroy/{id}', [AdminClientsMainController::class, 'destroy'])->name('destroy');
     });
+
+
 
     //Leads
     Route::name('leads.')->prefix('leads')->group(function(){
@@ -66,6 +87,11 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
 
     //Staff
     Route::resource('staff', AdminStaffMainController::class);
+
+    //TinyMCE File Upload
+    Route::post('tiny-file-upload', [AdminTinyFileUploadController::class, 'upload'])
+        ->name('tiny-file-upload')
+        ->middleware('web');
 });
 
 //Client / Customer Routes
