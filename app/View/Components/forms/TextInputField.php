@@ -13,16 +13,18 @@ class TextInputField extends Component
     public $type;
     public $required;
     public $value;
+    public $isTinyEditor;
     /**
      * Create a new component instance.
      */
-    public function __construct($label, $name, $type='text', $required = false, $value = null)
+    public function __construct($label, $name, $type='text', $required = false, $value = null, $isTinyEditor = false)
     {
         $this->label = $label;
         $this->name = $name;
         $this->type = $type;
         $this->required = $required;
         $this->value = $value;
+        $this->isTinyEditor = $isTinyEditor;
     }
 
     /**
