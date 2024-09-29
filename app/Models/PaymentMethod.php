@@ -16,4 +16,8 @@ class PaymentMethod extends Model
     protected function clients(){
         return $this->hasMany(ClientDetail::class);
     }
+
+    protected function transactions(){
+        return $this->hasMany(Transaction::class);
+    }
 }

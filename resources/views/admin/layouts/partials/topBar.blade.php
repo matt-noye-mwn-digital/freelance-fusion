@@ -25,7 +25,7 @@
                             <i class="fas fa-plus"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-
+                            @include('admin.layouts.navs.quickCreateDropdown')
                         </ul>
                     </li>
                     <li class="list-inline-item notifications">

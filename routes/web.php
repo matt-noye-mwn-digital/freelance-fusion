@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminActivityLogController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminTinyFileUploadController;
+use App\Http\Controllers\Admin\AdminTransactionController;
 use App\Http\Controllers\Admin\Clients\AdminClientsMainController;
 use App\Http\Controllers\Admin\Expenses\AdminExpenseCategoryController;
 use App\Http\Controllers\Admin\Expenses\AdminExpenseController;
@@ -54,6 +55,8 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
 
             Route::resource('categories', AdminExpenseCategoryController::class);
         });
+
+        Route::resource('transactions', AdminTransactionController::class);
     });
 
     //Clients
