@@ -31,7 +31,7 @@ class AdminExpenseController extends Controller
         $categories = ExpenseCategory::all();
         $currencies = Currency::all();
         $paymentMethods = PaymentMethod::all();
-        $clients = User::role(['customer', 'client'])->orderBy('first_name', 'asc')->get();
+        $clients = User::role(['customer', 'client'])->orderBy('full_name', 'asc')->get();
 
         return view('admin.pages.expenses.create', compact('categories', 'currencies', 'paymentMethods', 'clients'));
 
@@ -100,7 +100,7 @@ class AdminExpenseController extends Controller
         $categories = ExpenseCategory::all();
         $currencies = Currency::all();
         $paymentMethods = PaymentMethod::all();
-        $clients = User::role(['customer', 'client'])->orderBy('first_name', 'asc')->get();
+        $clients = User::role(['customer', 'client'])->orderBy('full_name', 'asc')->get();
 
         return view('admin.pages.expenses.edit', compact('expense', 'categories', 'currencies', 'paymentMethods', 'clients'));
     }

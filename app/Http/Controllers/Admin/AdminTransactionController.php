@@ -26,7 +26,7 @@ class AdminTransactionController extends Controller
      */
     public function create()
     {
-        $clients = User::Role(['client', 'customer'])->orderBy('first_name', 'asc')->get();
+        $clients = User::Role(['client', 'customer'])->orderBy('full_name', 'asc')->get();
         $paymentMethods = PaymentMethod::orderBy('name', 'asc')->get();
         $currencies = Currency::orderBy('name', 'asc')->get();
 
@@ -61,7 +61,7 @@ class AdminTransactionController extends Controller
     public function edit(string $id)
     {
         $transaction = Transaction::findOrFail($id);
-        $clients = User::Role(['client', 'customer'])->orderBy('first_name', 'asc')->get();
+        $clients = User::Role(['client', 'customer'])->orderBy('full_name', 'asc')->get();
         $paymentMethods = PaymentMethod::orderBy('name', 'asc')->get();
         $currencies = Currency::orderBy('name', 'asc')->get();
 

@@ -14,7 +14,7 @@ class AdminStaffMainController extends Controller
      */
     public function index()
     {
-        $staff = User::role('staff')->orderBy('first_name', 'ASC')->get();
+        $staff = User::role('staff')->orderBy('full_name', 'ASC')->get();
 
         return view('admin.pages.staff.index', compact('staff'));
     }
@@ -42,11 +42,12 @@ class AdminStaffMainController extends Controller
         User::create([
             'first_name' => $validated['first_name'],
             'last_name' => $validated['last_name'],
+            'full_name' => $validated['first_name'] . ' ' . $validated['last_name'],
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
         ])->assignRole('staff');
 
-        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has created a new staff member called ' . $validated['first_name'] . ' ' . $validated['last_name']);
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has created a new staff member called ' . $validated['full_name']);
 
         return redirect()->route('admin.staff.index')->with('success', 'New staff member created successfully');
     }

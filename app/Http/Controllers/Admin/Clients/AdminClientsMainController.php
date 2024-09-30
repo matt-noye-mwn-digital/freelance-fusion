@@ -60,6 +60,7 @@ class AdminClientsMainController extends Controller
         $user = User::create([
             'first_name' => $validated['first_name'],
             'last_name' => $validated['last_name'],
+            'full_name' => $validated['first_name'] . ' ' . $validated['last_name'],
             'email' => $validated['email'],
             'password' => bcrypt($password)
         ]);
@@ -80,7 +81,7 @@ class AdminClientsMainController extends Controller
             'currency' => $validated['currency'],
         ]);
 
-        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has created a new client called: ' . $user->first_name . ' ' . $user->last_name);
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has created a new client called: ' . $user->full_name);
 
         return redirect()->route('admin.clients.index')->with('success', 'Client created successfully');
     }
@@ -135,6 +136,7 @@ class AdminClientsMainController extends Controller
         $updateData = [
             'first_name' => $validated['first_name'],
             'last_name' => $validated['last_name'],
+            'full_name' => $validated['first_name'] . ' ' . $validated['last_name'],
         ];
 
         // Check if email is provided and different from current
@@ -161,7 +163,7 @@ class AdminClientsMainController extends Controller
         ]);
 
         // Log activity
-        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has updated client: ' . $client->first_name . ' ' . $client->last_name);
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has updated client: ' . $client->full_name);
 
         return redirect()->route('admin.clients.index')->with('success', 'Client updated successfully');
     }
