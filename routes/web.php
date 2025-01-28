@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\Clients\AdminClientsMainController;
 use App\Http\Controllers\Admin\Expenses\AdminExpenseCategoryController;
 use App\Http\Controllers\Admin\Expenses\AdminExpenseController;
 use App\Http\Controllers\Admin\Leads\AdminLeadMainController;
+use App\Http\Controllers\Admin\ProjectManagement\AdminMainProjectManagementController;
+use App\Http\Controllers\Admin\ProjectManagement\AdminProjectManagementProjectTypeController;
 use App\Http\Controllers\Admin\Settings\AdminPaymentMethodController;
 use App\Http\Controllers\Admin\Staff\AdminStaffMainController;
 use App\Http\Controllers\Auth\LoginController;
@@ -79,6 +81,17 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
         Route::get('edit/{id}', [AdminLeadMainController::class, 'edit'])->name('edit');
         Route::put('update/{id}', [AdminLeadMainController::class, 'update'])->name('update');
         Route::delete('destroy/{id}', [AdminLeadMainController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::name('project-management.')->prefix('project-management')->group(function(){
+
+        //Projects
+        Route::get('/', [AdminMainProjectManagementController::class, 'index'])->name('index');
+        Route::get('create', [AdminMainProjectManagementController::class, 'create'])->name('create');
+        Route::post('store', [AdminMainProjectManagementController::class, 'store'])->name('store');
+
+        //Project Types
+        Route::resource('project-types', AdminProjectManagementProjectTypeController::class);
     });
 
     //Settings

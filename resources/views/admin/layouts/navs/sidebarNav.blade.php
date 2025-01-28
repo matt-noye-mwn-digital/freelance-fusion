@@ -76,6 +76,22 @@
     </li>
     <li class="dropdown">
         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Project Management</a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{{ route('admin.project-management.index') }}">All Projects</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.project-management.create') }}">Create Project</a>
+            </li>
+            <hr>
+            <li>
+                <a href="{{ route('admin.project-management.project-types.index') }}">Project Types</a>
+            </li>
+            <hr>
+            <li>
+                <a href=""></a>
+            </li>
+        </ul>
     </li>
     <li class="dropdown">
         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Proposals</a>
@@ -104,7 +120,22 @@
     <li class="dropdown">
         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Support</a>
         <ul class="dropdown-menu">
-
+            <li><a href="">Support Overview</a></li>
+            <li class="dropdown dropdown-submenu">
+                <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Support Tickets</a>
+                <ul class="dropdown-menu submenu-dropdown-menu">
+                    <li><a href="">All Active</a></li>
+                    <li><a href="">Open</a></li>
+                    <li><a href="">Answered</a></li>
+                    <li><a href="">Customer Reply</a></li>
+                    <li><a href="">On Hold</a></li>
+                    <li><a href="">In Progress</a></li>
+                    <li><a href="">Closed</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">Knowledge Base</a>
+            </li>
         </ul>
     </li>
     <hr>
