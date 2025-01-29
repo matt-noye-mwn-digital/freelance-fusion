@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Admin\AdminTodoList;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -67,5 +68,9 @@ class User extends Authenticatable
             'inactive' => '<span class="badge text-bg-warning">Inactive</span>',
             'closed' => '<span class="badge text-bg-danger">Closed</span>',
         };
+    }
+
+    public function todos(){
+        return $this->hasMany(AdminTodoList::class, 'user_id', 'id');
     }
 }

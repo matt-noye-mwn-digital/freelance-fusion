@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ProjectManagement\AdminMainProjectManagementContr
 use App\Http\Controllers\Admin\ProjectManagement\AdminProjectManagementProjectTypeController;
 use App\Http\Controllers\Admin\Settings\AdminPaymentMethodController;
 use App\Http\Controllers\Admin\Staff\AdminStaffMainController;
+use App\Http\Controllers\Admin\Todo\AdminTodoMainController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Client\ClientDashboardController;
 use App\Http\Controllers\Staff\StaffDashboardController;
@@ -108,6 +109,15 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
     Route::post('tiny-file-upload', [AdminTinyFileUploadController::class, 'upload'])
         ->name('tiny-file-upload')
         ->middleware('web');
+
+    Route::name('todos.')->prefix('todos')->group(function () {
+        Route::get('/', [AdminTodoMainController::class, 'index'])->name('index');
+        Route::get('create', [AdminTodoMainController::class, 'create'])->name('create');
+        Route::post('store', [AdminTodoMainController::class, 'store'])->name('store');
+        Route::get('edit/{id}', [AdminTodoMainController::class, 'edit'])->name('edit');
+        Route::put('update/{id}', [AdminTodoMainController::class, 'update'])->name('update');
+        Route::delete('destroy/{id}', [AdminTodoMainController::class, 'destroy'])->name('destroy');
+    });
 });
 
 //Client / Customer Routes

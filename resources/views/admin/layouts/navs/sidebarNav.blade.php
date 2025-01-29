@@ -138,6 +138,9 @@
             </li>
         </ul>
     </li>
+    <li>
+        <a href="{{ route('admin.todos.index') }}">Todos</a>
+    </li>
     <hr>
     <li>
         <a href="{{ route('admin.activity-log.index') }}">Activity Log</a>
