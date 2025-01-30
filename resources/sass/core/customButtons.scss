@@ -37,3 +37,27 @@ button.blackOutlineBtn,
 input.blackOutlineBtn {
 
 }
+a.deleteBtn,
+button.deleteBtn,
+input.deleteBtn {
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    box-shadow: none;
+    color: $white;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    @include transition(all .4s ease-in-out);
+
+    &:hover {
+        background-color: darken(red, 10%);
+        border: 1px solid darken(red, 10%);
+        border-radius :5px;
+        box-shadow: none;
+        color: $white;
+        outline: none;
+        text-decoration: none;
+    }
+}

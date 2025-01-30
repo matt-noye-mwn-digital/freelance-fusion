@@ -7,7 +7,6 @@ header {
         flex-direction: row;
         height:80px;
         justify-content: center;
-        //padding: 1rem 0;
         position: relative;
 
         button.sidebarMenuToggler {
@@ -22,52 +21,37 @@ header {
             left: -1.5rem;
             line-height: 0;
             margin: 0;
+            opacity: .5;
             padding: 1rem;
             position: relative;
             top: 0;
             @include transition(all .4s ease-in-out);
             width: 75px;
 
+            &:hover {
+                background-color: transparent;
+                box-shadow: none;
+                color: $primary;
+                opacity: 1;
+                outline: none;
+                text-decoration: none;
+            }
+
         }
 
         .topbar-brand {
             color: $primary;
             display: block;
+            font-family: $bold;
             font-size: 1.5rem;
             margin-bottom: 0;
-            padding: 0 .5rem;
+            padding: 0 .5rem 0 0;
             text-decoration: none;
         }
 
-
-
-        .quickCreateDropdown {
-            a.dropdown-toggle {
-                color: $black;
-                font-size: 1rem;
-                text-decoration: none;
-                @include transition(all .4s ease-in-out);
-
-                &:hover,
-                &.show {
-                    background-color: transparent;
-                    border: 0;
-                    border-radius: 0;
-                    color: $secondry;
-                    outline: none;
-                    text-decoration: none;
-                }
-            }
-            ul.dropdown-menu {
-                li {
-                    a {
-
-                    }
-                }
-            }
-        }
-
         form.searchFormMain {
+            margin: 0 auto;
+            width: 50%;
             .input-group {
                 border: 1px solid $offBlack;
                 border-radius: 5px;
@@ -111,6 +95,37 @@ header {
             }
         }
 
+        .quickCreateDropdown {
+            a.dropdown-toggle {
+                color: $black;
+                font-size: 1rem;
+                opacity: .5;
+                text-decoration: none;
+                @include transition(all .4s ease-in-out);
+
+                &:hover,
+                &.show {
+                    background-color: transparent;
+                    border: 0;
+                    border-radius: 0;
+                    color: $secondry;
+                    outline: none;
+                    text-decoration: none;
+                }
+
+                &:after {
+                    display: none;
+                }
+            }
+            ul.dropdown-menu {
+                li {
+                    a {
+
+                    }
+                }
+            }
+        }
+
         ul.topbarEndList {
             align-items: center;
             display: flex;
@@ -122,9 +137,18 @@ header {
                 a {
                     color: $black;
                     font-size: 1rem;
+                    opacity: .5;
                     text-decoration: none;
                     @include transition(all .4s ease-in-out);
 
+                    &:hover {
+                        background-color: transparent;
+                        border: 0;
+                        box-shadow: none;
+                        color: $primary;
+                        outline: none;
+                        text-decoration: none;
+                    }
 
                 }
                 button.sidebarMenuToggler {
@@ -145,11 +169,60 @@ header {
                         text-decoration: none;
                     }
                 }
+
+                &.dropdown {
+                    a.dropdown-toggle {
+                        opacity: .5;
+                        @include transition(all .4s ease-in-out);
+
+                        &:hover,
+                        &.show {
+                            background-color: transparent;
+                            border: 0;
+                            box-shadow: none;
+                            color: $primary;
+                            opacity: 1;
+                            outline: none;
+                            text-decoration: none;
+                        }
+
+                        &:after {
+                            display: none;
+                        }
+                    }
+                    .dropdown-menu {
+                        background-color: $white;
+                        border: 1px solid $lightGrey;
+                        border-radius: 5px;
+                        margin: 0;
+                        padding: 1rem;
+                        width: 200px;
+
+                        li {
+                            margin-bottom: .5rem;
+
+                            a , button{
+                                padding: 0;
+                                text-align: left;
+                                text-decoration: none;
+                                &:hover {
+                                    color: $primary;
+                                }
+                            }
+
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+
                 &.userDropdown {
                     .dropdown-toggle {
                         color: $black;
                         font-family: $medium;
                         font-size: 1rem;
+                        opacity: 1;
                         text-decoration: none;
                         @include transition(all .4s ease-in-out);
                         img.userAvatar {
@@ -160,44 +233,12 @@ header {
                             width: auto;
                         }
                     }
-                    .dropdown-menu {
-                        li {
-                            margin-bottom: 0;
-                            a,
-                            button {
-                                background-color: transparent;
-                                border: 0;
-                                border-radius: 0;
-                                color: $offBlack;
-                                display: block;
-                                margin-bottom: 0;
-                                opacity: .5;
-                                padding: .5rem 1rem;
-                                text-align: left;
-                                text-decoration: none;
-                                @include transition(all .4s ease-in-out);
-                                width: 100%;
 
-                                &:hover {
-                                    background-color: transparent;
-                                    border: 0;
-                                    border-radius: 0;
-                                    box-shadow: none;
-                                    color: $primary;
-                                    outline: none;
-                                    text-decoration: none;
-                                }
-                            }
-                        }
-                    }
                 }
             }
             hr {
                 margin: .5rem 0;
             }
         }
-
-
-
     }
 }

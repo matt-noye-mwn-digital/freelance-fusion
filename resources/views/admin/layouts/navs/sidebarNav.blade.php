@@ -1,9 +1,9 @@
 <ul class="sidebar-nav">
     <li>
-        <a href="{{ route('admin.dashboard') }}" class="{{ Route::is('admin.dashboard') ? 'active' : '' }}">Dashboard</a>
+        <a href="{{ route('admin.dashboard') }}" class="{{ Route::is('admin.dashboard') ? 'active' : '' }}"><i class="fa-solid fa-house"></i> Dashboard</a>
     </li>
     <li class="dropdown">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Billing</a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-coins"></i> Billing</a>
         <ul class="dropdown-menu">
             <li><a href="{{ route('admin.billing.expenses.index') }}">Expenses</a></li>
             <li><a href="{{ route('admin.billing.transactions.index') }}">Transactions</a></li>
@@ -31,14 +31,14 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Clients</a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-users"></i> Clients</a>
         <ul class="dropdown-menu">
             <li><a href="{{ route('admin.clients.index') }}">All Clients</a></li>
             <li><a href="{{ route('admin.clients.create') }}">Create Client</a></li>
         </ul>
     </li>
     <li class="dropdown">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Contracts</a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-file-contract"></i> Contracts</a>
         <ul class="dropdown-menu">
             <li><a href="">All Contracts</a></li>
             <li><a href="">Create Contract</a></li>
@@ -50,7 +50,7 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Leads</a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-tty"></i> Leads</a>
         <ul class="dropdown-menu">
             <li>
                 <a href="{{ route('admin.leads.index') }}">All Leads</a>
@@ -63,19 +63,19 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Marketing</a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-bullhorn"></i> Marketing</a>
         <ul class="dropdown-menu">
 
         </ul>
     </li>
     <li class="dropdown">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Orders</a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-receipt"></i> Orders</a>
         <ul class="dropdown-menu">
 
         </ul>
     </li>
     <li class="dropdown">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Project Management</a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-chart-gantt"></i> Projects</a>
         <ul class="dropdown-menu">
             <li>
                 <a href="{{ route('admin.project-management.index') }}">All Projects</a>
@@ -94,7 +94,7 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Proposals</a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-file-contract"></i> Proposals</a>
         <ul class="dropdown-menu">
             <li><a href="">All Proposals</a></li>
             <li><a href="">Create Proposal</a></li>
@@ -102,12 +102,12 @@
     </li>
 
     <li class="dropdown">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-regular fa-chart-bar"></i> Reports</a>
         <ul class="dropdown-menu"></ul>
     </li>
 
     <li class="dropdown">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Staff</a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-users"></i> Staff</a>
         <ul class="dropdown-menu">
             <li>
                 <a href="{{ route('admin.staff.index') }}">All Staff</a>
@@ -118,7 +118,7 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Support</a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ticket"></i> Support</a>
         <ul class="dropdown-menu">
             <li><a href="">Support Overview</a></li>
             <li class="dropdown dropdown-submenu">
@@ -139,15 +139,20 @@
         </ul>
     </li>
     <li>
-        <a href="{{ route('admin.todos.index') }}">Todos</a>
+        <a href="{{ route('admin.todos.index') }}"><i class="fas fa-clipboard"></i> Todos</a>
     </li>
     <hr>
-    <li>
-        <a href="{{ route('admin.activity-log.index') }}">Activity Log</a>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-cogs"></i> Utilities</a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{{ route('admin.activity-log.index') }}">Activity Log</a>
+            </li>
+        </ul>
     </li>
     <li class="dropdown">
         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Settings
+            <i class="fa-solid fa-wrench"></i> Settings
         </a>
         <ul class="dropdown-menu">
             <li>

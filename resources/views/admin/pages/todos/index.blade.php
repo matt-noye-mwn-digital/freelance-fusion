@@ -14,22 +14,28 @@
                     <table class="table table-hover w-100">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Due Date</th>
                                 <th>Status</th>
+                                <th>Assigned to</th>
                                 <th class="actions"></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($todos as $todo)
                                 <tr>
-                                    <td>{{ $todo->id }}</td>
                                     <td>{{ $todo->name }}</td>
                                     <td>{!! $todo->description !!}</td>
                                     <td>{{ date('d/m/y', strtotime($todo->due_date)) }}</td>
-                                    <td>{{ $todo->status }}</td>
+                                    <td>{!! $todo->getStatus() !!}</td>
+                                    <td>
+                                        @if($todo->assignedTo)
+                                            {{ $todo->assignedTo->first_name }} {{ $todo->assignedTo->last_name }}
+                                        @else
+                                            --
+                                        @endif
+                                    </td>
                                     <td class="actions">
                                         <div class="dropdown">
                                             <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,7 +43,7 @@
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
-                                                    <a href="">View</a>
+                                                    <a href="{{ route('admin.todos.show', $todo->id) }}">View</a>
                                                 </li>
                                                 <li>
                                                     <a href="{{ route('admin.todos.edit', $todo->id) }}">Edit</a>
@@ -58,6 +64,7 @@
                     </table>
                 </div>
             </div>
+
         </div>
     </section>
 @endsection

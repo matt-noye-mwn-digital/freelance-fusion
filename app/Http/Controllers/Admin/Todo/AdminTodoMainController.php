@@ -16,6 +16,12 @@ class AdminTodoMainController extends Controller
     {
         $todos = AdminTodoList::orderBy('due_date', 'asc')->paginate(20);
 
+        $todos->map(function($todo){
+            $todo->assignedTo = User::where('id', $todo->assigned_to)->first();
+            return $todo;
+        });
+
+
         return view('admin.pages.todos.index', compact('todos'));
     }
 
@@ -58,7 +64,9 @@ class AdminTodoMainController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $todo = AdminTodoList::where('id', $id)->first();
+
+        return view('admin.pages.todos.show', compact('todo'));
     }
 
     /**
@@ -82,6 +90,9 @@ class AdminTodoMainController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $todo = AdmiNTodoList::where('id', $id)->first();
+        $todo->delete();
+
+        return redirect('admin/todos')->with('success', 'Todo deleted successfully.');
     }
 }

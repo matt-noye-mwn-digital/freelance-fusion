@@ -28,9 +28,19 @@
                             @include('admin.layouts.navs.quickCreateDropdown')
                         </ul>
                     </li>
-                    <li class="list-inline-item notifications">
+                    <li class="list-inline-item dropdown">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-message"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item dropdown notifications">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-bell"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item dropdown">
+                        <a href="{{ route('admin.todos.index') }}">
+                            <i class="fas fa-clipboard"></i>
                         </a>
                     </li>
                     <li class="list-inline-item dropdown userDropdown">
@@ -45,7 +55,6 @@
                             <li>
                                 <a href="">My Account</a>
                             </li>
-                            <hr>
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();

@@ -114,6 +114,7 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
         Route::get('/', [AdminTodoMainController::class, 'index'])->name('index');
         Route::get('create', [AdminTodoMainController::class, 'create'])->name('create');
         Route::post('store', [AdminTodoMainController::class, 'store'])->name('store');
+        Route::get('show/{id}', [AdminTodoMainController::class, 'show'])->name('show');
         Route::get('edit/{id}', [AdminTodoMainController::class, 'edit'])->name('edit');
         Route::put('update/{id}', [AdminTodoMainController::class, 'update'])->name('update');
         Route::delete('destroy/{id}', [AdminTodoMainController::class, 'destroy'])->name('destroy');
