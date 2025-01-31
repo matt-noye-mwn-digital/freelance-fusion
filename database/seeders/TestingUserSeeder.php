@@ -17,6 +17,7 @@ class TestingUserSeeder extends Seeder
         User::create([
             'first_name' => 'Test',
             'last_name' => 'Staff',
+            'full_name' => 'Test Staff',
             'email' => 'test-staff@test.com',
             'password' => bcrypt('password'),
         ])->assignRole('staff');
@@ -24,6 +25,7 @@ class TestingUserSeeder extends Seeder
         $client = User::create([
             'first_name' => 'Test',
             'last_name' => 'Client',
+            'full_name' => 'Test Client',
             'email' => 'test-client@test.com',
             'password' => bcrypt('password'),
         ])->assignRole('client');

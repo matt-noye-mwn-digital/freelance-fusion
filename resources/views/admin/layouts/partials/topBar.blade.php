@@ -29,6 +29,9 @@
                         </ul>
                     </li>
                     <li class="list-inline-item dropdown">
+                        <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-stopwatch"></i></a>
+                    </li>
+                    <li class="list-inline-item dropdown">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-message"></i>
                         </a>
