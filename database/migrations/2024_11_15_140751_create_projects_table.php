@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedBigInteger('project_type_id');
             $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('assigned_to')->nullable();
+            $table->unsignedBigInteger('status_id')->default(1);
             $table->date('start_date')->nullable();
             $table->date('due_date');
             $table->decimal('progress', 6, 1)->nullable();
@@ -30,6 +32,8 @@ return new class extends Migration
 
             $table->foreign('project_type_id')->references('id')->on('project_types')->onDelete('cascade');
             $table->foreign('client_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('assigned_to')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('status_id')->references('id')->on('project_statuses')->onDelete('cascade');
         });
     }
 

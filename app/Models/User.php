@@ -73,4 +73,10 @@ class User extends Authenticatable
     public function todos(){
         return $this->hasMany(AdminTodoList::class, 'user_id', 'id');
     }
+    public function clientProject(){
+        return $this->hasMany(Project::class, 'client_id', 'id');
+    }
+    public function staffProject(){
+        return $this->hasMany(Project::class, 'assigned_to', 'id');
+    }
 }

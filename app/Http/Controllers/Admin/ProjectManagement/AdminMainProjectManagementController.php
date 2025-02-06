@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\ProjectManagement;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\ProjectStatus;
 use App\Models\ProjectType;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -25,11 +26,12 @@ class AdminMainProjectManagementController extends Controller
      */
     public function create()
     {
-        $clients = User::where('role', 'client')->get();
+        $clients = User::role('client')->get();
         $projectTypes = ProjectType::all();
-        $staff = User::where('role', 'staff')->get();
+        $staff = User::role(['super admin', 'admin', 'staff'])->get();
+        $projectStatuses = ProjectStatus::all();
 
-        return view('admin.pages.project-management.create', compact('clients', 'projectTypes', 'staff'));
+        return view('admin.pages.project-management.create', compact('clients', 'projectTypes', 'staff', 'projectStatuses'));
     }
 
     /**
@@ -40,6 +42,7 @@ class AdminMainProjectManagementController extends Controller
         $validated = $request->validate([
 
         ]);
+
 
         $project = Project::create([
 
