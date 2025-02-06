@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             PaymentMethodSeeder::class,
             SuperAdminSeeder::class,
             AdminSeeder::class,
+            ProjectStatusSeeder::class,
+            ProjectTypeSeeder::class,
             //TestingUserSeeder::class,
 
         ]);
